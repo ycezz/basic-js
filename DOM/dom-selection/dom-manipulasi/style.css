@@ -1,0 +1,20 @@
+/* h1 {
+    font-size: 2rem;
+} */
+
+li {
+    list-style: none;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+img {
+    width: 10%;
+}
+
+#box {
+    background: orange;
+    color: white;
+}
