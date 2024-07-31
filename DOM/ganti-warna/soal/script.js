@@ -22,29 +22,61 @@ for( let i = 0; i < p.length; i++){
 }
 
 //Soal 5
-function btn() {
-    const form = document.getElementById('form-container');
-    const btn = form.getElementsByTagName('button');
-    const textBtn = document.createTextNode('Kirim');
-    form.appendChild(textBtn);
+
+const formContainer = document.getElementById('form-container');
+const btn = formContainer.getElementsByTagName('button');
+
+for ( let i = 0; i < btn.length; i++ ) {
+    btn[i].innerHTML = 'Kirim';
 }
 
+// DOM Manipulation
+// Soal 1
+const newItem = document.createElement('li');
+newItem.appendChild(document.createTextNode('Item Baru'));
+const list = document.getElementById('list');
+list.appendChild(newItem);
 
+// Soal 2
+const removeMe = document.getElementById('remove-me');
+if (removeMe) {
+    removeMe.parentNode.removeChild(removeMe);
+}
 
+// Soal 3 menggandakan elemen dengan class duplicate-me
 
+const elementDuplicate = document.querySelector('.duplicate-me');
+const duplicatedElement = elementDuplicate.cloneNode(true);
+const container = document.getElementById('container');
+container.appendChild(duplicatedElement);
 
+// Soal 4
+const gantiAtribut = document.getElementById('image');
 
-
-
-
-
-
-
+if (gantiAtribut) {
+    gantiAtribut.setAttribute('src', 'new-image.jpg');
+}
 
 //Soal 5
-function addClass() {
-    const highlight = document.getElementById('content');
-    highlight.classList.add('highlight');
+function addHighlightClass() {
+    const divs = document.getElementsByTagName('div');
+    for ( let i = 0; i < divs.length; i++ ) {
+        divs[i].classList.add('highlight');
+    }
 }
-addClass();
+addHighlightClass();
 
+// DOM Events
+// Soal 1
+const button = document.getElementById('myButton');
+button.addEventListener('click', function() {
+    alert('Button clicked!');
+});
+
+// Soal 2
+const input = document.getElementById('myInput');
+input.addEventListener('input', function(event) {
+    console.log(event.target.value);
+});
+
+// Soal 3
