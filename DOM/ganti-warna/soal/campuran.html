@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggle-button">Tampilkan</button>
+    <div id="content" class="hidden">
+        <p>Ini adalah konten yang dapat disembunyikan.</p>
+    </div>
+    <div id="list">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+
+    <script>
+        const toggleButton = document.getElementById('toggle-button');
+
+                toggleButton.addEventListener('click', function() {
+                const content = document.getElementById('content');
+                if( content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    this.innerText = 'Sembunyikan';
+                } else {
+                    content.classList.add('hidden');
+                    this.innerText = 'Tampilkan';
+                }
+                
+                const list = document.querySelector('.list');
+                const items = document.querySelectorAll('.item');
+                for ( let i = 0; i < items.length; i++ ) {
+                    items[i].innerHTML = 'Updated Item';
+                }
+
+            });
+    </script>
+</body>
+</html>
